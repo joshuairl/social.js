@@ -1,5 +1,14 @@
-social-js-api - is a JavaScript wrapper for a number of social network VKontakte, Facebook, My World, and Classmates.
-UPDATE: The original developer is Russian, so I've translated this readme to english and of the comments and will be trying to add other platforms such as LinkedIn, and Twitter.
+##Social.js
+###A framework independent JavaScript library to aid integration with popular social platforms.
+
+####Plans
+* Multiple social login interfaces such as Facebook, Twitter, LinkedIn, and Foursquare.
+* Status updates for all platforms
+* Retrieve contacts for all platforms
+
+####Currently supported networks
+* Facebook
+* 
 
 API
 * SocialWrapper.getFriends
