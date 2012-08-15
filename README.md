@@ -1,55 +1,50 @@
-social-js-api - это JS-обертка для использования ряда методов социальных сетей VKontakte, Facebook, Мой мир и Одноклассники.
+social-js-api - is a JavaScript wrapper for a number of social network VKontakte, Facebook, My World, and Classmates.
+UPDATE: The original developer is Russian, so I've translated this readme to english and of the comments and will be trying to add other platforms such as LinkedIn, and Twitter.
 
-Методы API
+API
+* SocialWrapper.getFriends
+* SocialWrapper.getCurrentUser
+* SocialWrapper.getAppFriends
+* SocialWrapper.getProfiles
+* SocialWrapper.inviteFriends
+* SocialWrapper.resizeCanvas
+* SocialWrapper.postWall
+* SocialWrapper.makePayment
 
-*  socialWrapper.getFriends
-*  socialWrapper.getCurrentUser
-*  socialWrapper.getAppFriends
-*  socialWrapper.getProfiles
-*  socialWrapper.inviteFriends
-*  socialWrapper.resizeCanvas
-*  socialWrapper.postWall
-*  socialWrapper.makePayment
+Methods:
+* SocialWrapper.initResizeCanvas
+* SocialWrapper.initContext
+* SocialWrapper.getApiName
 
-Методы:
+Requires jQuery.
+jQuery (document). ready (function () {
+	var driverName = 'vk'; / / or mm, or facebook: sm resolveApiName in the social-api.js
+	var params = {mm_key: 'xxx', fb_id: 'xxx'}; / / cm example.html
+	new SocialApiWrapper (driverName, params, callback);
+});
 
-*  socialWrapper.initResizeCanvas
-*  socialWrapper.initContext
-*  socialWrapper.getApiName
+After that, you will be able to the global window.socialWrapper.
+Implemented names profile fields to a common format. The names are given as follows:
+* Id
+* First_name
+* Last_name
+* Nickname
+* Birthdate
+* Gender
+* Photo
 
-Для работы требуется jQuery.
+In example.html - an example of use. This example works in four sots.setyah iframe-like application for these addresses:
 
-		jQuery(document).ready(function() {
-			var driverName = 'vk'; // или mm, или facebook: см resolveApiName в social-api.js
-			var params = { mm_key: 'xxx', fb_id: 'xxx' }; // см example.html
-			new SocialApiWrapper(driverName, params, callback);
-		});
+* Http://url.com/example.html?api=vk
+* Http://url.com/example.html?api=mm
+* Http://url.com/example.html?api=fb
+* Http://url.com/example.html?api=ok
 
-После выполнения будет доступен глобальный window.socialWrapper .
+In Friendster Library tested only in the sandbox.
 
-Реализовано приведение названий полей профиля пользователя к общему формату. Названия задаются так:
+Here there is no check permishenov installed application, it can be done in the application settings (VK, MM), or on the server (FB).
 
-*  id
-*  first_name
-*  last_name
-*  nickname
-*  birthdate
-*  gender
-*  photo
+Development started until it is used, api may change, and will certainly change. It is better to participate.
 
-В example.html - пример использования. Этот пример работает в четырех соц.сетях как iframe-приложение под такими адресами:
-
-*  http://url.com/example.html?api=vk
-*  http://url.com/example.html?api=mm
-*  http://url.com/example.html?api=fb
-*  http://url.com/example.html?api=ok
-
-В Одноклассниках библиотека протестирована только в sandbox.
-
-Здесь пока нет проверки пермишенов установленного приложения, это можно сделать в настройках приложения (VK, MM), или на сервере (FB).
-
-Разработка начата, пока не стоит это использовать, api может измениться, и непременно изменится. Лучше участвуйте.
-
-В планах - добавление полей профиля, авторизация с сайтов, обработка ошибок, обертка в deferred, много больше методов,
-клиентская загрузка медиа-файлов, коллбеки для оплаты, и многое-многое другое.
-
+The plans - adding profile fields, authorization from the sites, error handling, wrap in a deferred, many more methods
+client download media files, callbacks for payment, and much more.
